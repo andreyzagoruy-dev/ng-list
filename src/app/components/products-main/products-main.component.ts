@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Product } from '../../models/product'
 import products from '../../constants/products';
 
 @Component({
@@ -8,11 +10,11 @@ import products from '../../constants/products';
 })
 export class ProductsMainComponent implements OnInit {
 
-  public products = products;
+  public products: Product[] = products;
 
-  public filteredProducts = products;
+  public filteredProducts: Product[] = products;
 
-  public sortDirection = -1;
+  public sortDirection: number = -1;
 
   ngOnInit() {
     this.toggleSort('Rating');

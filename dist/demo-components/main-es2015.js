@@ -45,7 +45,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"products\">\n  <ul class=\"products__list products__list--favourites\">\n    <ng-container\n      *ngFor=\"let product of productsAll\"\n    >\n      <li\n        *ngIf=\"product.Favourite\"\n        class=\"products__item product\"\n      >\n        <ng-container\n          [ngTemplateOutlet]=\"productTemplate\"\n          [ngTemplateOutletContext]=\"{product:product}\"\n        ></ng-container>\n      </li>\n    </ng-container>\n  </ul>\n  <ul class=\"products__list\">\n    <ng-container\n      *ngFor=\"let product of products\"\n    >\n      <li\n        *ngIf=\"!product.Favourite\"\n        class=\"products__item product\"\n      >\n      <ng-container\n        [ngTemplateOutlet]=\"productTemplate\"\n        [ngTemplateOutletContext]=\"{product:product}\"\n      ></ng-container>\n      </li>\n    </ng-container>\n  </ul>\n</div>\n\n<ng-template #productTemplate let-product=\"product\">\n  <div class=\"product__info\">\n    <img\n      class=\"product__image\"\n      src=\"{{product.img}}\"\n      alt=\"product.Title\"\n    >\n    <h2 class=\"product__title\">{{product.Title}}</h2>\n    <p class=\"product__description\">{{product.Description}}</p>\n    <a class=\"product__link\" href=\"{{product.Url}}\">Go to product page</a>\n  </div>\n  <div class=\"product__sidebar\">\n    <button\n      class=\"product__favourite-button button\"\n      (click)=\"toggleFavourite(product)\"\n    >\n      {{product.Favourite ? 'Remove from' : 'Add to'}} favourites\n    </button>\n    <div class=\"product__rating\">Rating: {{product.Rating}}</div>\n  </div>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"products\">\n  <ul class=\"products__list products__list--favourites\">\n    <ng-container\n      *ngFor=\"let product of productsAll\"\n    >\n      <li\n        *ngIf=\"product.Favourite\"\n        class=\"products__item\"\n      >\n        <app-product [product] = \"product\" ></app-product>\n      </li>\n    </ng-container>\n  </ul>\n  <ul class=\"products__list\">\n    <ng-container\n      *ngFor=\"let product of products\"\n    >\n      <li\n        *ngIf=\"!product.Favourite\"\n        class=\"products__item\"\n      >\n        <app-product [product] = \"product\" ></app-product>\n      </li>\n    </ng-container>\n  </ul>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/product/product.component.html":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/product/product.component.html ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"product\">\n  <div class=\"product__info\">\n    <img\n      class=\"product__image\"\n      src=\"{{product.img}}\"\n      alt=\"product.Title\"\n    >\n    <h2 class=\"product__title\">{{product.Title}}</h2>\n    <p class=\"product__description\">{{product.Description}}</p>\n    <a class=\"product__link\" href=\"{{product.Url}}\">Go to product page</a>\n  </div>\n  <div class=\"product__sidebar\">\n    <button\n      class=\"product__favourite-button button\"\n      (click)=\"toggleFavourite(product)\"\n    >\n      {{product.Favourite ? 'Remove from' : 'Add to'}} favourites\n    </button>\n    <div class=\"product__rating\">Rating: {{product.Rating}}</div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -58,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"products-main\">\n  <div class=\"products-main__header\">\n    <div class=\"products-main__search\">\n      <label>\n        Search:\n        <input\n          class=\"products-main__search-field\"\n          type=\"text\"\n          #searchInput\n          (input)=\"search(searchInput)\"\n        />\n      </label>\n    </div>\n    <button\n      class=\"products-main__sort button\"\n      (click)=\"toggleSort('Rating')\"\n      [ngClass]=\"sortDirection > 0 ? 'products-main__sort--desc' : 'products-main__sort--asc'\"\n    >\n      Sort\n    </button>\n  </div>\n  <app-product-list\n    [products] = filteredProducts\n    [productsAll] = products\n  ></app-product-list>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"products-main\">\n  <div class=\"products-main__header\">\n    <div class=\"products-main__search\">\n      <label>\n        Search:\n        <input\n          class=\"products-main__search-field\"\n          type=\"text\"\n          #searchInput\n          (input)=\"search(searchInput)\"\n        />\n      </label>\n    </div>\n    <button\n      class=\"products-main__sort button\"\n      (click)=\"toggleSort('Rating')\"\n      [ngClass]=\"sortDirection > 0 ? 'products-main__sort--desc' : 'products-main__sort--asc'\"\n    >\n      Sort\n    </button>\n  </div>\n  <app-product-list\n    [products] = \"filteredProducts\"\n    [productsAll] = \"products\"\n  ></app-product-list>\n</div>\n");
 
 /***/ }),
 
@@ -349,6 +362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_products_main_products_main_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/products-main/products-main.component */ "./src/app/components/products-main/products-main.component.ts");
 /* harmony import */ var _components_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/product-list/product-list.component */ "./src/app/components/product-list/product-list.component.ts");
+/* harmony import */ var _components_product_product_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/product/product.component */ "./src/app/components/product/product.component.ts");
+
 
 
 
@@ -362,7 +377,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
             _components_products_main_products_main_component__WEBPACK_IMPORTED_MODULE_4__["ProductsMainComponent"],
-            _components_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_5__["ProductListComponent"]
+            _components_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_5__["ProductListComponent"],
+            _components_product_product_component__WEBPACK_IMPORTED_MODULE_6__["ProductComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"]
@@ -385,7 +401,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".products__list {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.product {\n  border-bottom: 1px solid #DEDEDE;\n  padding: 1rem 0;\n  display: -webkit-box;\n  display: flex;\n}\n\n.product__sidebar {\n  margin-left: auto;\n  text-align: right;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n\n.product__image {\n  max-width: 200px;\n  max-height: 200px;\n}\n\n.product__description {\n  margin: 1rem 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmRyZXl6YWdvcnV5L1dvcmsvbmctaXRlbXMvc3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QtbGlzdC9wcm9kdWN0LWxpc3QuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1saXN0L3Byb2R1Y3QtbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGdCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7QUNERjs7QURJQTtFQUNFLGdDQUFBO0VBQ0EsZUFBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtBQ0RGOztBRElBO0VBQ0UsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLDRCQUFBO0VBQUEsNkJBQUE7VUFBQSxzQkFBQTtFQUNBLHlCQUFBO1VBQUEsOEJBQUE7QUNERjs7QURJQTtFQUNFLGdCQUFBO0VBQ0EsaUJBQUE7QUNERjs7QURJQTtFQUNFLGNBQUE7QUNERiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1saXN0L3Byb2R1Y3QtbGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cyB7fVxuXG4ucHJvZHVjdHNfX2xpc3Qge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDA7XG59XG5cbi5wcm9kdWN0IHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNERURFREU7XG4gIHBhZGRpbmc6IDFyZW0gMDtcbiAgZGlzcGxheTogZmxleDtcbn1cblxuLnByb2R1Y3RfX3NpZGViYXIge1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnByb2R1Y3RfX2ltYWdlIHtcbiAgbWF4LXdpZHRoOiAyMDBweDtcbiAgbWF4LWhlaWdodDoyMDBweDtcbn1cblxuLnByb2R1Y3RfX2Rlc2NyaXB0aW9uIHtcbiAgbWFyZ2luOiAxcmVtIDA7XG59XG4iLCIucHJvZHVjdHNfX2xpc3Qge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDA7XG59XG5cbi5wcm9kdWN0IHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNERURFREU7XG4gIHBhZGRpbmc6IDFyZW0gMDtcbiAgZGlzcGxheTogZmxleDtcbn1cblxuLnByb2R1Y3RfX3NpZGViYXIge1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnByb2R1Y3RfX2ltYWdlIHtcbiAgbWF4LXdpZHRoOiAyMDBweDtcbiAgbWF4LWhlaWdodDogMjAwcHg7XG59XG5cbi5wcm9kdWN0X19kZXNjcmlwdGlvbiB7XG4gIG1hcmdpbjogMXJlbSAwO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".products__list {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmRyZXl6YWdvcnV5L1dvcmsvbmctaXRlbXMvc3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QtbGlzdC9wcm9kdWN0LWxpc3QuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1saXN0L3Byb2R1Y3QtbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGdCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7QUNERiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1saXN0L3Byb2R1Y3QtbGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0cyB7fVxuXG4ucHJvZHVjdHNfX2xpc3Qge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDA7XG59XG5cbiIsIi5wcm9kdWN0c19fbGlzdCB7XG4gIGxpc3Qtc3R5bGU6IG5vbmU7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -404,9 +420,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ProductListComponent = class ProductListComponent {
-    toggleFavourite(product) {
-        product.Favourite = !product.Favourite;
-    }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -421,6 +434,53 @@ ProductListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./product-list.component.scss */ "./src/app/components/product-list/product-list.component.scss")).default]
     })
 ], ProductListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/product/product.component.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/components/product/product.component.scss ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".product {\n  border-bottom: 1px solid #DEDEDE;\n  padding: 1rem 0;\n  display: -webkit-box;\n  display: flex;\n}\n\n.product__sidebar {\n  margin-left: auto;\n  text-align: right;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n\n.product__image {\n  max-width: 200px;\n  max-height: 200px;\n}\n\n.product__description {\n  margin: 1rem 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmRyZXl6YWdvcnV5L1dvcmsvbmctaXRlbXMvc3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QvcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0L3Byb2R1Y3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQ0FBQTtFQUNBLGVBQUE7RUFDQSxvQkFBQTtFQUFBLGFBQUE7QUNDRjs7QURFQTtFQUNFLGlCQUFBO0VBQ0EsaUJBQUE7RUFDQSxvQkFBQTtFQUFBLGFBQUE7RUFDQSw0QkFBQTtFQUFBLDZCQUFBO1VBQUEsc0JBQUE7RUFDQSx5QkFBQTtVQUFBLDhCQUFBO0FDQ0Y7O0FERUE7RUFDRSxnQkFBQTtFQUNBLGlCQUFBO0FDQ0Y7O0FERUE7RUFDRSxjQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QvcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0IHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNERURFREU7XG4gIHBhZGRpbmc6IDFyZW0gMDtcbiAgZGlzcGxheTogZmxleDtcbn1cblxuLnByb2R1Y3RfX3NpZGViYXIge1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnByb2R1Y3RfX2ltYWdlIHtcbiAgbWF4LXdpZHRoOiAyMDBweDtcbiAgbWF4LWhlaWdodDoyMDBweDtcbn1cblxuLnByb2R1Y3RfX2Rlc2NyaXB0aW9uIHtcbiAgbWFyZ2luOiAxcmVtIDA7XG59XG4iLCIucHJvZHVjdCB7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjREVERURFO1xuICBwYWRkaW5nOiAxcmVtIDA7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG5cbi5wcm9kdWN0X19zaWRlYmFyIHtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG5cbi5wcm9kdWN0X19pbWFnZSB7XG4gIG1heC13aWR0aDogMjAwcHg7XG4gIG1heC1oZWlnaHQ6IDIwMHB4O1xufVxuXG4ucHJvZHVjdF9fZGVzY3JpcHRpb24ge1xuICBtYXJnaW46IDFyZW0gMDtcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/product/product.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/product/product.component.ts ***!
+  \*********************************************************/
+/*! exports provided: ProductComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ProductComponent = class ProductComponent {
+    toggleFavourite(product) {
+        product.Favourite = !product.Favourite;
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ProductComponent.prototype, "product", void 0);
+ProductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-product',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./product.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/product/product.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./product.component.scss */ "./src/app/components/product/product.component.scss")).default]
+    })
+], ProductComponent);
 
 
 
